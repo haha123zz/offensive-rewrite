@@ -19,7 +19,7 @@ env.load = function(path)
     if (success) then
         loadstring(result)()
     else
-        warn(error)
+        warn(result)
     end
 end
 
