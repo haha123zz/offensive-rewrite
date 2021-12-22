@@ -23,5 +23,5 @@ env.load = function(path)
     end
 end
 
-getgenv().modules.connect = env.load("/Modules/Connect.lua")
+getgenv().modules.connect = env.load("Modules/Connect.lua")
 getgenv().modules.connect()
