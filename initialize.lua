@@ -1,8 +1,7 @@
 ---@diagnostic disable: undefined-global
-
-
 local env = {}
 env.modules = {}
+env.debugging = true
 
 if (getgenv().env) then
     return game:GetService("Players").LocalPlayer:Kick()
@@ -18,11 +17,11 @@ env.load = function(path)
     end)
 
     if (success) then
-        loadstring(result)()
+        loadstring(result)
     else
         warn(result)
     end
 end
 
-getgenv().modules.connect = env.load("Modules/Connect.lua")
-getgenv().modules.connect()
+getgenv().env.modules.connect = env.load("Modules/Connect.lua")
+getgenv().env.modules.connect()
